@@ -1,0 +1,62 @@
+---
+layout: post
+title: ! 'InfoPogo: Scratching the surface'
+tags:
+- css
+- infodesign
+- information design
+- javascript
+- progressive enhancement
+- skinning
+- surface
+- Work
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+A few weeks ago I was contracted by the guys at Infopogo.com to give their prototype some design love. If you haven't seen it yet, InfoPogo is a research tool that searches census, demographic, housing, crime, and a whole bunch of other public data (don't let me trivialize it, it's much more than that) by US regions. 
+
+Looking for the median family income for Beverly Hills? <a href="http://www.infopogo.com/City/Demographic/Beverly_Hills_city.CA">It was $102,611 in 1999</a>. Pretty neat huh? 
+
+The InfoPogo guys have big plans for the application, including making improvements on the <a href="http://www.jjg.net/elements/pdf/elements_ch02.pdf">other planes of User Experience</a>, however, any improvements on the surface would go along way. 
+
+The InfoPogo team has spent countless hours in making their components and controls as re-usable as possible, so it was important not to create a bunch of work for them for the sake of design. In order to make it easy for them to implement, much of my HTML/CSS started from the markup that they already had on the site.
+<h3>Flexible Crumbs</h3>
+The crumbs are built using the <code>last-child</code> CSS selector so that the last <code>li</code> is automatically formatted appropriately. 
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/01/infopogo-crums.jpg" alt="Crumbs" title="Crumbs" width="695" height="254" class="alignnone size-full wp-image-531" />
+
+From the developer's point of view, it's a simple unordered list. (<em>Oh, and I know what you are thinking - Internet Explorer doesn't like <code>last-child</code>. Have you seen <a href="http://code.google.com/p/ie7-js/">ie7.js</a></em>?) 
+
+<h3>Navigation</h3>
+<a href="http://www.alistapart.com/articles/slidingdoors2/">Doug Bowman's sliding doors</a> method for making tabbed navigation seems like a hundred years old in Internet years, but it is still one of the most flexible and bulletproof methods for creating tabbed navigation from an unordered list.
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/01/infologo-tabs.jpg" alt="infologo-tabs" title="infologo-tabs" width="695" height="340" class="alignnone size-full wp-image-540" />
+
+The flexibility is important because as InfoPogo matures, the names of these tabs might change and there may be more tabs to come. This is one example that requires a bit of extra markup for the developers, but in the end they are still just rendering an unordered list. 
+
+<h3>Summaries</h3>
+The summary components don't currently exist on the site, but will soon. Each summary unit is marked up as a definition list and is automatically styled (again, using <code>last-child</code>) and floated into place. The summary's parent container doesn't care how many individual summary "units" are inside, it will handle them appropriately.
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/01/infopogo-summary.jpg" alt="infopogo-summary" title="infopogo-summary" width="694" height="151" class="alignnone size-full wp-image-545" />
+
+The default summary unit will handle fairly large numbers, but can be extended if the needs arises to accommodate very large numbers.
+
+<h3>Data Grids</h3>
+Most of the data is presented in a tabular fashion so it was important to design some flexible <code>table</code> markup. This meant accounting for the baseline table styles, such as <code>td</code>'s and <code>th</code>'s, but also extending the basic styles for additional presentation and functionality. For example, adding the class <code>alt-row</code> to the <code>table</code> tag added alternating rows.
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/01/infopogo-datatable.jpg" alt="infopogo-datatable" title="infopogo-datatable" width="695" height="204" class="alignnone size-full wp-image-550" />
+
+ A lightweight script looks for tables with this class and adds the needed markup client-side with no additional work from the development team.
+
+<h3>Pulling it Together</h3>
+Here is an example (although, not a <em>real</em> page) of all of the newly skinned components working together:
+
+<a href="http://travisisaacs.com/wp-content/uploads/2009/01/infopogo-full1.jpg"><img src="http://travisisaacs.com/wp-content/uploads/2009/01/infopogo-full-thumb.jpg" alt="infopogo-full-thumb" title="infopogo-full-thumb" width="695" height="400" class="alignnone size-full wp-image-553" /></a>
+<small>Click to enlarge</small>
+
+It will be really exciting to watch InfoPogo come together and mature over the next few months, so keep your eye out.
+
+

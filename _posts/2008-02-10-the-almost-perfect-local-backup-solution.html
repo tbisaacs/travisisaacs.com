@@ -1,0 +1,58 @@
+---
+layout: post
+title: The (almost) perfect Mac backup solution
+tags:
+- aperture
+- Aperture library
+- apple
+- backup
+- backup software
+- backup solution
+- Carbon Copy
+- internet pipe coming
+- leopard
+- mac
+- Misc.
+- oh sh!t
+- superduper
+- time machine
+- Verizon
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Sorry Windows folks, Mac only. 
+
+I really like, no, love Leopard’s <a href="http://www.apple.com/macosx/features/timemachine.html">Time Machine</a> backup feature. It’s transparency is perfect for me. I plugged in my drive, turned on Time Machine, and forgot about it. 
+
+A few weeks ago I launched <a href="http://www.apple.com/aperture/">Aperture</a> and <a href="http://twitter.com/tbisaacs/statuses/617659742" target="_blank">found a completely empty library</a>. That’s 14gb of photos gone folks. 
+
+After the initial panic and slurring of expletives I regained composure, comforted by that little green icon in the right side of my dock. Luckily Time Machine had grabbed a snapshot of my Aperture library at midnight the night before. I restored it, launched Aperture and found everything in order. No drama. Keeping around versions and snapshots of files is really where Time Machine shines. 
+
+While it is possible to restore from Time Machine, <a href="http://duncandavidson.com/blog/restoring_from_time_machine/" target="_blank">it’s not perfect</a>. Backup software such as <a href="http://www.shirt-pocket.com/SuperDuper/SuperDuperDescription.html" target-"_blank">SuperDuper</a> and <a href="http://www.bombich.com/software/ccc.html" target="_blank">Carbon Copy Cloner</a> (CCC) take the “traditional” backup approach by creating a bit-for-bit clone of your drive that is bootable. 
+
+SuperDuper and CCC are both great pieces of software, the problem (for me) is that I simply don’t backup enough. It’s time consuming and resource intensive. It’s not feasible or convenient to fire off a backup while I’m working. Had I needed to restore my Aperture library from a Super Duper backup, it probably would have been a few days (or even weeks) old, leaving me with hundreds of photos gone. 
+
+So which is better? Having snapshots of individual files to rollback to, or a bootable drive in the event of a disaster. 
+
+Yep, it’s both. Use Time Machine for file snapshots and Super Duper (or CCC) to keep a bootable copy of your drive. Here is how:
+
+<h2>Step 1:</h2>
+Get a really big hard drive. I have a 500GB Western Digital My Book USB drive attached to my Mac Pro.
+
+<h2>Step 2:</h2> 
+Using Disk Utility, make a partition the same size as your system drive. This partition will be used to store your bootable system backup. There really is no need to make it any bigger than your system drive since it will be a direct clone of it. 
+
+<h2>Step 3:</h2>
+Make a second partition that fills up the rest of the free space on the drive. This partition will be used for Time Machine since it will happily fill up as much free space as you’ll give it. 
+
+Once you have partition the drive, it’s simply a matter of configuring the backup software. For Time Machine, that means turning it on and telling it to use the larger of the two partitions you just created. Click on the Time Machine icon in your dock or from System Preferences. Time Machine will chew up your system for a while during it’s initial backup, but once that is finished you’ll barely notice it. 
+
+Next, fire up Super Duper or CCC and use the “set it and forget it” scheduling options to set up a time to backup when your machine won’t be busy. I personally backup late at night and let Super Duper shutdown my Mac when it’s done. 
+
+So why not perfect? For one, if my house burns down, both drives are toast (literally). A really thorough backup routine should include regularly round-robin swapping out your backups off-site somewhere. I've been checking out <a href="http://amazon.com/s3" target="_blank">Amazon S3</a> lately and am definitely intrigued about it. It's dirt cheap and can be accessed several different ways, including as simple as FTP. The down side is it's speed is limited by the internet pipe coming to your house. I'm lucky enough to have Verizon FiOS, but even at those speeds, backing up my system could take a day or two.
+
+Second, storing both backups on the same drive would also leave me high and drive in the event that the drive goes down. This could (and will) be easily fixed by adding a second inexpensive hard drive. 
+

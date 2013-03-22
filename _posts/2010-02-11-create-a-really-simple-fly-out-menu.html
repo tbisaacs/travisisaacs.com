@@ -1,0 +1,123 @@
+---
+layout: post
+title: Create a really simple fly-out menu
+tags:
+- Code
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Recently I had a need to for a really simple menu to disclose some secondary options - you might think of it as a <a href="http://www.slideshare.net/jeremy/revealing-interfaces-web" target="_blank">revealing interface</a>.
+
+There are a millions of <a href="http://www.google.com/search?q=flyout+menu+generator&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:en-US:official&client=firefox-a" target="_blank">flyout, drop down, suckerfish menu generators</a> out there, but all of them are really complex. I just need to show a few options. 
+
+Here is what I came up with:
+
+<a href="http://travisisaacs.com/share/menu/" target="_blank"><img src="http://travisisaacs.com/wp-content/uploads/2010/02/menu.jpg" alt="" title="menu" width="581" height="229" class="alignnone size-full wp-image-887" /></a>
+
+Instead of pasting a bunch of markup into this post, have a look at the <a href="http://travisisaacs.com/share/menu/" target="_blank">live example</a>.
+
+<h2>How it works</h2>
+
+The markup is super simple. There is a link used to trigger the menu, and the menu itself is an unordered list with some links it.
+
+<strong>Scripting</strong>
+
+The scripting is also very straightforward (I'm using jQuery, but there is nothing about it that is jQuery specific). Listen for a the <code>.trigger</code> link to get clicked, and display the closest <code>.menu</code> if it's closed:
+
+<code><pre>
+var $menu = $('ul.menu_options');
+
+//hide all of the menus
+$menu.hide();
+
+$('a.trigger').each(function(index) {				
+	$(this).click(function() {
+		//identify the clostest menu
+		$nextMenu = $(this).next($menu);
+		if ($nextMenu.is(":visible")) {
+			$nextMenu.fadeOut('fast').css('z-index', '50');
+		} else {
+			$menu.hide(); //close all other open menus
+			$nextMenu.show().css('z-index', '500'); //z-index for good measure
+		}
+
+		return false;
+	});
+});
+</pre></code>
+
+That's probably good enough for most uses - but I can't leave good enough alone. The weakness with is that the menu hangs around until you click the trigger again to close it. 
+
+Here is the ideal behavior:
+<ul>
+	<li>If you trigger the menu and do nothing, it will go away after <em>n</em> seconds.</li>
+	<li>If you trigger the menu and mouseover it, it will stay there.</li>
+	<li>When you mouse leaves the menu, it will go away after <em>n</em> seconds.</li>
+</ul>
+
+To achieve this, we'll set a unique <code>setTimeout</code> for each menu and listen for <code>mouseenter</code> and <code>mouseleave</code> events to clear the timeout. Here it is all together: 
+
+<code><pre>
+var $menu = $('ul.menu_options');
+var $open = $('a.trigger');
+
+//create an emtpy object to keep track of the timeouts
+var menuTimeouts = {};
+
+//hide all of the menus
+$menu.hide();
+
+$open.each(function(index) {				
+	$(this).click(function() {
+		//identify the clostest menu
+		$nextMenu = $(this).next($menu);
+		if ($nextMenu.is(":visible")) {
+			$nextMenu.fadeOut('fast').css('z-index', '50');
+
+                        //clear the active setTimout
+			if (menuTimeouts[$id]) {
+				clearTimeout(menuTimeouts[$nextMenu.attr('id')]);
+			        menuTimeouts[$nextMenu.attr('id')] = undefined;
+	                 }
+		} else {
+			$menu.hide(); //close all other open menus
+			$nextMenu.show().css('z-index', '500'); //z-index for good measure
+			
+			//start a unique setTimeout for this menu
+			menuTimeouts[$nextMenu.attr('id')] = setTimeout(function () {
+				//fade the menu out after 2 seconds
+				$nextMenu.fadeOut('slow');
+			}, 2000)
+		}
+
+		return false;
+	});
+});
+
+$menu.find('li').mouseenter(function (event) {
+	//store the ID of this trigger's closest menu
+	var $id = $(this).parents('ul').attr('id');
+	
+	//cancel the timeOut when the mouse is over the menu
+	if (menuTimeouts[$id]) {
+		clearTimeout(menuTimeouts[$id]);
+		menuTimeouts[$id] = undefined;
+	}
+}).mouseleave(function () {
+	var $this = $(this).parents('ul');
+	
+	//start another time when the mouse leaves the menu
+	menuTimeouts[$this.attr('id')] = setTimeout(function () {
+		$this.fadeOut('slow');
+	}, 2000);
+});
+</pre></code>
+
+<a href="http://travisisaacs.com/share/menu/" target="_blank">Checkout live example to see it all in action &rarr;</a>
+
+I've tested this in Firefox, Safari, and IE7 and IE8. You might need to tweak the position of the menu in IE, but everything else is good to go.
+
+

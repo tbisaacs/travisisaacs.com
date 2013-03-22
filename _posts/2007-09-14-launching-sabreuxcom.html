@@ -1,0 +1,40 @@
+---
+layout: post
+title: Launching Sabreux.com
+tags:
+- Work
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+---
+<p>We finally took down the splash screen for <a href="http://sabreux.com">Sabreux.com</a> yesterday after almost three months of development.</p>
+
+<div class="float_right" style="margin:10px;"><img src="http://travisisaacs.com/assets/img/posted/sabreux.jpg" alt="sabreux" /></div>
+
+	<p>Why did it take three months? Well, that's because we are <strong>very</strong> busy with other projects around Sabre.</p>
+
+	<p><strong>Site Features</strong><br />
+The site is powered by the latest and greatest version of <a href="http://mu.wordpress.org/">Wordpress MU</a>. We chose this flavor so we could easily launch and maintain other blogs (like our <a href=""http://www.localhost:8888/travis/index.php?id=12">Agent Blog</a>). All of the pages on the site are wordpress <a href="http://codex.wordpress.org/Pages">pages</a> which allows me to maintain them without opening up an <span class="caps">FTP</span> client. </p>
+
+	<p>This was my first time using WordPress and I'm pleased to say that I had no problems. I'm a fan. In fact I'm thinking of giving up the fight with TextPattern and making the switch. (Off topic: why is it so hard to get clean url's to work with txp and media temple?). I love the WP syntax and being able to mix in <span class="caps">PHP</span>.</p>
+
+	<p>I also use several plug-ins from the WP community, but the two handiest are <a href="http://www.coffee2code.com/wp-plugins/">Get Custom Field Values</a> and <a href="http://mnm.uib.es/gallir/wp-cache-2/">wp-cache</a>. </p>
+
+	<p>I use Get Custom Field Values to retrieve the key and value set uniquely for each page. By making the template aware of which page was being displayed I could do lots of dynamic things at the page template level, such as highlight the active menu item and dynamically include things. This saved me from created unique templates for simple page difference.</p>
+
+	<p><strong>Keeping Things Private</strong><br />
+Because we are in-house to Sabre, we have to keep some things private. To get around this I setup an internal webserver behind the Sabre firewall (actually it's in the <a href="http://en.wikipedia.org/wiki/Computer_reservations_system">GDS</a> datacenter in Tulsa). The idea was that private content would be here and we could control access without setting up usernames and passwords.</p>
+
+	<p>I toyed with ideas for replicating the two sites but decided against it. Instead, sabreux.com would have all public content and the internal webserver would have private content only. The internal website links back to the public site. </p>
+
+	<p>Because sabreux.com will be the primary entry point, we made the decision to post links to  private content, even if the user wasn't inside Sabre. This mean that I needed a way to notify and transition users to the private site. I also wanted it to be automatic so contributers didn't have to do anything special to link to private content.</p>
+
+	<p>The solution was to intercept private links and <a href="http://sabreux.com/private/?url=http%3A//10.19.61.144">tell</a> the reader that the content they requested was private and on an internal server.</p>
+
+	<p>My friend Steve wrote an extremely useful script called <a href="http://sabreux.com/ux/js/private.js">private.js</a> that looks at all of the links on the page. If an href matches the url of the internal webserver, it rewrites it to the redirect page and applies a class and title attribute. I can visually indicate that the link is private content. From here the redirect page passes the reader on the the internal server.</p>
+
+	<p>My next step will be to cookie the user when the visit the internal website. Once they see the redirect, they don't need to see it again.</p>
+
+	<p>We also reversed private.js to also indicate links from the private site back to public sabreux.com. Neato! </p>

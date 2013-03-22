@@ -1,0 +1,19 @@
+# destination: /var/www/virtual/l3kn/html/
+# destination: /Users/leon/Documents/site
+name: My Life In Pixels
+description: Travis Isaacs
+url: http://travisisaacs.com
+pygments: true
+auto: true
+asset_pipeline:
+  bundle: true            # Default = true
+  compress: true          # Default = true
+  output_path: assets     # Default = assets
+  gzip: false
+
+info:
+  name: Travis Isaacs
+  mail: travis.isaacs@gmail.com
+
+
+safe: false

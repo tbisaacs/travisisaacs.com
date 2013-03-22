@@ -1,0 +1,46 @@
+---
+layout: post
+title: Improving on Infinite Scrolling
+tags:
+- 37 signals
+- ajax
+- Better
+- design pattern
+- humanized
+- pagination
+- results
+- search
+- viewzi
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+I've been thinking a lot about <a href="http://www.humanized.com/weblog/2006/04/25/no_more_more_pages/">infinite scrolling lately</a>. We're cooking up some interesting stuff and <a href="http://www.viewzi.com/preview">Viewzi</a> and are considering implementing this behavior in a few very specific scenarios.
+
+What is infinite scrolling? Instead of breaking content into 'pages', as a user nears (or scrolls to) the end of a set of content or results, more content is seamlessly loaded behind it creating one long continuous page. Humanized likes this approach because the concept of "pages" really has no semantic meaning to a person. Those numbers at the bottom of the page don't really mean much. Second, and perhaps most important, by scrolling to the bottom of a "page" the user is essentially telling the system that they are ready for more content. Why should they have to ask for it?
+
+A few years ago, <a href="http://www.37signals.com/svn/archives2/no_more_more_pages.php">Matt from 37 signals pointed out</a> that infinite scrolling turns your scrollbar "into a liar" because the "bottom" of the page actually becomes the middle once new content is loaded.
+
+The dancing scrollbar has no effect whatsoever when scrolling with the keyboard or mouse wheel. You can scroll uninterrupted using either mechanism. But to Matt's point the concept of top, bottom, or middle is broken with infinite scrolling. Take away the concept of "pages" and you could have a problem. Why? What if you scroll through a ton of content and need to go back to something you past. Finding it could be tricky without some way to mentally bookmark where you saw it. Infinite scrolling works fantastic for scrolling "through" content, but falls flat when you need to go back to something.
+
+I'm not convinced that the lack of semantic meaning behind pagination is a problem, but not having to ask for more content is really, really powerful. Can't we combine both? Reading through the comments I came across a surprise from <a href="http://www.37signals.com/svn/archives2/no_more_more_pages.php#c33982">commenter Nate</a>:
+
+<blockquote>
+<p>Why couldn’t there be a floating status widget in the corner of the screen giving you a relative idea of where you are?</p>
+<p>You could designate that 10 items equals one page, (Page 5) or just show how many items from the top you are (#50).</p>
+</blockquote>
+
+<em>Note: I would be careful with how I use the word "page" since it's all really one page.</em>
+
+Nate has a brilliant idea. Is solving this problem really as simple as adding visual way points so users can get back?
+
+<img src='http://travisisaacs.com/wp-content/uploads/2008/02/infinite_paging.png' alt='infinite paging example' />
+
+Now that you know where the piece of information is that you are looking for, how do you get there? With pagination, each page is the same "distance" from each other. With infinite scrolling, each "page" you scroll through potentially puts you further and further away from the result you actually wanted.
+
+ <img src='http://travisisaacs.com/wp-content/uploads/2008/02/infinite_paging2.png' alt='infinite page with indicators' />
+
+By providing a simple "running" pagination that grows as you scroll you provide users with direct access back to any section. This is essentially what the scroll bar does (<em>that infinite scrolling breaks</em>) but is much more accurate.
+

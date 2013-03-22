@@ -1,0 +1,33 @@
+I was recently accused of "getting work done on a Mac." As a Mac user in a mostly Windows work environment, I took that as quite a compliment. 
+
+If you work on the web long enough, sooner or later you'll cross paths with a Microsoft .NET project and all of the tooling changes that come with it. Visual Studio, IIS, Internet Explorer, and God help you - TFS. The Microsoft development stack is flexible, capable, and powerful. However, they are a 180&deg; shift from the lightweight tools that most Mac developers have come to <a href="http://www.randsinrepose.com/archives/2009/11/02/the_foamy_rules_for_rabid_tools.html">fiercely love</a>. 
+
+When working on projects at <a href="http://improvingenterprises.com">Improving</a>, I consider myself a fully integrated (web) developer with a few exceptions:
+
+<ul>
+<li>I don't use the debugger (in Visual Studio)</li>
+<li>I rarely need to compile</li>
+<li>I never touch a database</li>
+<li>I don't need IntelliSense or other IDE helpers</li>
+<li>I test against IE, but don't use it otherwise</li>
+</ul>
+
+I don't need all the functionality provide by Visual Studio and other Microsoft developer tools. So why deal with all the overhead (and remembering to alt-tab instead of cmd-tab)? 
+
+Recently I discovered (with the help of my team) the perfect environment for me. It eliminates (most of) the need to fumble around in Visual Studio and puts me back in front of my go-to tool: Textmate. (<a href="http://twitter.com/tbisaacs/status/1231617286">Click here for some of my favorite TextMate features</a>).
+
+<h2>Maximum Cake</h2>
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/11/do-work-son.png" alt="do-work-son" title="do-work-son" width="636" height="296" class="alignnone size-full wp-image-780" />
+
+This configuration looks a bit complicated, but it's not. 
+
+<ul>
+<li>All of the project source code lives inside of a Windows 7 virtual machine and is managed via Subversion</li>
+<li>IIS is pointed at my source directory and serves up the web project via HTTP, making it accessible via <code>localhost</code> <em>and</em> outside of the virtual machine</li>
+<li>My source directory is mounted in OSX via an SMB share and pulled into TextMate</li>
+</ul>
+
+Essentially, I use Windows as web server, a file server, and as an occasional compiler. That's it.
+
+This is <a href="http://twitter.com/tbisaacs/status/2295072902">nirvana for me</a>.

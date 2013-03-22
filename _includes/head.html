@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{ site.name }}</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ site.url }}/feed.xml" />
+
+{% css_asset_tag global %}
+- _assets/main.sass
+- _assets/l3_grid.sass
+- _assets/normalize.css
+- _assets/markdown.sass
+- _assets/pygments.css
+{% endcss_asset_tag %}
+
+{% javascript_asset_tag head %}
+- _assets/vendor/modernizr-2.6.2-respond-1.1.0.min.js
+- _assets/tweet.js
+{% endjavascript_asset_tag %}

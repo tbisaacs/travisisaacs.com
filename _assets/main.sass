@@ -1,0 +1,274 @@
+@import bourbon
+
+// jekyll-bolilerplate.sass, based on initializer
+
+$text_1: white
+$text_2: #222
+$header_height: 71px
+$subheader_height: 70px
+
+html, button, input, select, textarea 
+    color: $text_2
+
+body 
+    font-size: 1em
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif
+    font-size: 13px
+    line-height: 18px
+    color: #737373
+    background-color: white
+
+header
+    position: relative
+
+::-moz-selection, ::selection 
+    text-shadow: none
+
+hr 
+    display: block
+    height: 1px
+    border: 0
+    border-top: 1px solid #ccc
+    margin: 1em 0
+    padding: 0
+
+img 
+    vertical-align: middle
+    max-width: 100%
+
+fieldset 
+    border: 0
+    margin: 0
+    padding: 0
+
+textarea 
+    resize: vertical
+
+
+.chromeframe 
+    margin: 0.2em 0
+    background: #ccc
+    color: #000
+    padding: 0.2em 0
+
+// Container
+
+.header-container
+    position: fixed
+    background: #1a1a1a
+    color: white
+    width: 100%
+    @include box-shadow(0px 1px 2px rgba(0,0,0,0.2))
+    z-index: 10
+
+.footer-container
+    margin-top: $header_height + $subheader_height
+    right: 0
+    left: 0
+    background: #1a1a1a
+    color: white
+    position: relative
+    z-index: 5
+    @include box-shadow(0px -1px 2px rgba(0,0,0,0.2))
+
+.subheader-container
+    right: 0
+    left: 0
+    background: #bfbfbf
+    top: $header_height
+    height: $subheader_height
+    position: fixed
+    z-index: 0
+    
+.main-container
+    top: $header_height + $subheader_height
+    position: relative
+    @include box-shadow(0px -1px 2px rgba(0,0,0,0.2))
+    z-index: 5
+    background-color: white
+
+.title 
+    color: $text_1
+
+.pull-left
+    float: left
+
+.pull-right
+    float: right
+
+.well
+    border: 3px solid $text_2
+    padding: 10px
+
+.button 
+    border: 3px solid $text_2
+    padding: 5px
+    display: inline-block
+    color: $text_2
+    background-color: white
+    text-decoration: none
+    &:hover 
+        color: white
+        background-color: $text_2    
+    &:active
+
+.button-inverse
+    border: 3px solid $text_2
+    padding: 5px
+    display: inline-block
+    color: white
+    background-color: $text_2
+    text-decoration: none
+    &:hover 
+        color: $text_2
+        background-color: white   
+    &:active   
+
+.button-small
+    padding: 1px !important
+
+// MOBILE: Menu
+nav 
+    ul 
+        margin: 0
+        padding: 0
+        li
+            display: inline
+    a 
+        font-size: 20px
+        display: block
+        margin-bottom: 10px
+        text-align: center
+        text-decoration: none
+        font-weight: bold
+        color: $text_1
+        float: left
+        margin: 0 1.7%
+        padding: 25px 1%
+        margin-bottom: 0        
+        &:hover, &:visited
+            color: $text_1
+    li
+        &:first-child 
+            a 
+                margin-left: 0
+
+    .oldie 
+        nav 
+            a 
+                margin: 0 0.7%
+// MOBILE: Main
+   
+.main 
+    padding: 30px 0
+    article
+        h1
+            font-size: 2em  
+
+// ALL: IE Fixes
+   
+.ie7 .title 
+    padding-top: 20px
+
+// Author's custom styles
+   
+//Media Queries
+   
+@media only screen and (min-width: 768px)    
+    .main article 
+        float: left
+        width: 57%
+    
+//Helper classes
+   
+.ir 
+    background-color: transparent
+    border: 0
+    overflow: hidden
+    *text-indent: -9999px
+    &:before
+        content: ""
+        display: block
+        width: 0
+        height: 150%
+
+.hidden 
+    display: none !important
+    visibility: hidden
+
+.visuallyhidden 
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px
+    .focusable:active, .focusable:focus
+        clip: auto
+        height: auto
+        margin: 0
+        overflow: visible
+        position: static
+        width: auto
+
+.invisible 
+    visibility: hidden
+
+.clearfix 
+    *zoom: 1
+    &:before, &:after
+        content: " "
+        display: table
+    &:after
+        clear: both
+
+// Print styles
+   
+@media print 
+    * 
+        background: transparent !important
+        color: #000 !important
+        box-shadow: none !important
+        text-shadow: none !important
+    
+    a, a:visited 
+        text-decoration: underline
+    
+    a[href]:after 
+        content: " (" attr(href) ")"
+    
+    abbr[title]:after 
+        content: " (" attr(title) ")"
+   
+    .ir a:after
+        content: ""   
+
+    a
+        &[href^="javascript:"]:after, &[href^="#"]:after
+            content: ""
+
+    pre, blockquote 
+        border: 1px solid #999
+        page-break-inside: avoid
+    
+    thead 
+        display: table-header-group 
+    
+    tr, img 
+        page-break-inside: avoid
+    
+    img 
+        max-width: 100% !important
+    
+    @page 
+        margin: 0.5cm
+    
+    p, h2, h3 
+        orphans: 3
+        widows: 3
+    
+    h2, h3 
+        page-break-after: avoid
+    

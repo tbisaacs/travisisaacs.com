@@ -1,0 +1,17 @@
+<div class="row">
+	<a class="twitter-share-button"  
+		href="https://twitter.com/share" 
+		data-text="Omfg, so interesting!" 
+		data-count="vertical" 
+		data-url="http://www.l3kn.de{% if post %}{{ post.url }}{% else %}{{ page.url }}{% endif %}" 
+		data-via="l3kn" 
+		data-lang="en">Tweet
+	</a>
+	<a class="FlattrButton" style="display:none;"
+	    title="{{ post.title }}"
+	    data-flattr-uid="l3kn"
+	    data-flattr-tags="text, opensource"
+	    data-flattr-category="text"
+	    href="http://www.l3kn.de{{ post.url }}">					
+	</a>
+</div>

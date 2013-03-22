@@ -1,0 +1,66 @@
+---
+layout: post
+title: RadioTime Web Tuner Redesign
+tags:
+- Work
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+Last month I had the pleasure of helping out my former colleagues at <a href="http://travisisaacs.com/work/companies/radiotime/">RadioTime</a> take another pass at the RadioTime Web Tuner.
+
+The endpoint for a successful RadioTime experience is the web tuner. If all goes well and you find what your are looking for, you'll tune in. Getting the tuner experience nailed is absolutely critical. 
+
+<h3>Evaluating the current design</h3>
+
+From a technical perspective, the tuner is rock solid and has a very intricate set of rules and fall-backs to ensure that listeners get the right stream when they click play (and it plays). Don't let me trivialize the work behind this in one paragraph - <strong>trust me</strong>, the guys at RadioTime have spent months getting it right and it shows. 
+
+<strong>However, the UI problems are immediately apparent</strong>:
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/webtuner-og.jpg" alt="webtuner-og" title="webtuner-og" width="537" height="265" class="alignnone size-full wp-image-570" />
+
+<ul>
+	<li>There is a significant amount of inefficiently use space</li>
+	<li>The olive-to-white gradient just doesn't work (remember - the best gradients go unseen)</li>
+	<li>The iconography at the bottom doesn't communicate it's functionality</li>
+	<li>The information design lacks a clear structure and sense of priority</li>
+</ul>
+
+<h3>An idea</h3>
+
+<a href="http://www.flickr.com/photos/tbisaacs/3247366863/" title="Idea extraction by Travis Isaacs, on Flickr"><img src="http://farm4.static.flickr.com/3365/3247366863_29d9116998.jpg" width="500" height="375" alt="Idea extraction" /></a>
+
+My first approach was to clean up the information design and add some structure to the tuner. One idea was to consolidate the play/pause with volume and to move the "on now" information to the bottom of the player since that information was sometimes unavailable.
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/webuner-wf.jpg" alt="webuner-wf" title="webuner-wf" width="541" height="293" class="alignnone size-full wp-image-572" />
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/webtuner-skin1.jpg" alt="webtuner-skin1" title="webtuner-skin1" width="545" height="296" class="alignnone size-full wp-image-575" />
+
+Because play and volume (should) only be available when a stream is successfully tuned, that area could also be use to communicate status messages:
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/webtuner-wf-status.jpg" alt="webtuner-wf-status" title="webtuner-wf-status" width="380" height="245" class="alignnone size-full wp-image-573" />
+
+This layout works well, but one grip is that it created an unnecessarily long volume slider. That level of fidelity for volume isn't needed, and could easily be confused with a progress or loading bar.
+
+<h3>Round 2</h3>
+
+Aside from the long volume slider, I really didn't like the three horizontal bands (the header, the volume/status bar, and the "on now" info) created. It felt jarring. 
+
+In my next revision, I proposed a condensed display where we combine the status and "on now" information into a single line, multi-state display.
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/webtuner-skin2.jpg" alt="webtuner-skin2" title="webtuner-skin2" width="545" height="229" class="alignnone size-full wp-image-577" />
+
+This significantly simplifies the interface, put would still provide needed info in a just-in-time fashion.
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/webtuner-skin-status.jpg" alt="webtuner-skin-status" title="webtuner-skin-status" width="546" height="338" class="alignnone size-full wp-image-578" />
+
+<h3>The Final Product</h3>
+
+While the core design changes remain intact, the final product differs slightly in that the multi-state display was shelved for now out of concerns for scope creep. 
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/02/3297703659_8d9e7752af_o.png" alt="3297703659_8d9e7752af_o" title="3297703659_8d9e7752af_o" width="484" height="264" class="alignnone size-full wp-image-580" />
+
+
+The beauty of the layout is that it works just as well with one line of information as it does with three. The changes to the state display will follow sometime in the next few months.

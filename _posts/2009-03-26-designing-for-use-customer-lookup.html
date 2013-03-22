@@ -1,0 +1,43 @@
+---
+layout: post
+title: ! 'Designing for Use: Customer Lookup'
+tags:
+- Details
+- form
+- forms
+- information design
+- interaction design
+- lookup
+- search
+- ui
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+I'm working on a Point-of-Sale like project for a retailer that needed a simple form to qualify a customer at the beginning of an order. It is often helpful for the service associate to review a customer's past order history and allows them to skip the step of capturing contact info all over again.
+
+When tasked with designing form - the immediate interaction in my head was a very simple form with a single search box. The associate could type in the customer's name and the system would immediately start searching the customer records for a match. The associate could quickly select a matching record, or click a button to expose a for a new customer:
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/03/form-v1.jpg" alt="form-v1" title="form-v1" width="600" height="389" class="alignnone size-full wp-image-638" />
+
+
+This worked well enough. The immediate feedback that the results provided as you were typing made the interaction very simple intuitive. However stepping through the process was kind of clunky - especially if you needed to create a new customer. My second revision was just to make a the new customer form persistent. This made the UI a bit more conversational - "search for a customer, OR create a new one." 
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/03/fomr-v2.jpg" alt="fomr-v2" title="fomr-v2" width="800" height="396" class="alignnone size-full wp-image-641" />
+
+<div class="update"><p>Note: While it's not relevant to the topic of this post - commenter Cam Beck pointed out that the assumed opt-in here isn't very nice to customers. The customer's email in the final product will be used only to notify order completion. At that point the customer will opt-in to marketing communication.</p>
+-Travis</div>
+
+This worked even better. The development team built it out and we demoed it - the stakeholders were delighted. This was a few weeks ago.
+
+It wasn't until today that I realized that I had it all wrong. 
+
+My form tailored the interaction with the assumption that most customers would already be in the system. The reality is that this is not the case. A quick gut-check with the client confirmed that in fact, only one in five customers are repeat (this isn't as bad as it sounds - given the nature of the product that they are selling).
+
+In my most recent revision of the form, I removed the search box all together and started with the new customer form. The behavior works exactly the same - the associate will type a customer's name (or other info) into the form and the system will immediately search for an existing record. 
+
+<img src="http://travisisaacs.com/wp-content/uploads/2009/03/form-v3.jpg" alt="form-v3" title="form-v3" width="800" height="414" class="alignnone size-full wp-image-644" />
+
+By making this simple change - we tailored the form to the most common usage scenario - and - bonus - simplified the form by letting the new customer form pull double duty. 

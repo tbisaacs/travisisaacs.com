@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">    
+  <url>
+    <loc>http://foo.de</loc>
+    <lastmod>2013-03-17T14:54:20-05:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+    <url>
+      <loc>http://foo.de2012/01/11/2011-in-photos.html</loc> 
+      <lastmod>2012-01-11T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2011/09/30/caveman.html</loc> 
+      <lastmod>2011-09-30T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2011/01/19/downsized.html</loc> 
+      <lastmod>2011-01-19T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2011/01/01/2010-in-photos.html</loc> 
+      <lastmod>2011-01-01T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2010/07/29/60-days-of-keynote-kung-fu.html</loc> 
+      <lastmod>2010-07-29T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2010/05/10/keynote-kung-fu-coming-to-the-big-design-conference.html</loc> 
+      <lastmod>2010-05-10T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2010/04/19/how-iphone-os4-folders-should-work.html</loc> 
+      <lastmod>2010-04-19T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2010/04/05/heatmap-aptonic-com.html</loc> 
+      <lastmod>2010-04-05T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2010/03/23/introducing-trailhead.html</loc> 
+      <lastmod>2010-03-23T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2010/02/11/create-a-really-simple-fly-out-menu.html</loc> 
+      <lastmod>2010-02-11T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/12/29/2009-in-photos.html</loc> 
+      <lastmod>2009-12-29T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/11/02/have-your-cake-and-eat-it-too.html</loc> 
+      <lastmod>2009-11-02T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/09/20/canon-5d-mark-ii-after-the-honeymoon.html</loc> 
+      <lastmod>2009-09-20T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/07/07/blinksale-outtakes.html</loc> 
+      <lastmod>2009-07-07T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/07/05/a-fanboy-professes-his-love-for-xaml.html</loc> 
+      <lastmod>2009-07-05T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/03/26/designing-for-use-customer-lookup.html</loc> 
+      <lastmod>2009-03-26T00:00:00-05:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/02/24/radiotime-web-tuner-redesign.html</loc> 
+      <lastmod>2009-02-24T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/01/28/infopogo-scratching-the-surface.html</loc> 
+      <lastmod>2009-01-28T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2009/01/13/in-defense-of-single-serving-applications.html</loc> 
+      <lastmod>2009-01-13T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>http://foo.de2008/12/13/the-isaacs-family-christmas-card.html</loc> 
+      <lastmod>2008-12-13T00:00:00-06:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+</urlset>

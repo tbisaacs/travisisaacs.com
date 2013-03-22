@@ -1,0 +1,75 @@
+---
+layout: post
+title: Job chooser made complex (the details)
+tags:
+- conversational interface
+- Details
+- forms
+- interaction
+- search field
+- smart search box
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+<p class="updated"><strong>UPDATED November 17, 2007</strong>: This is a modified and reposted version of an entry made back in September. I removed where I found this at the owner's request.</p>
+
+<p>To the untrained eye this set of select boxes may look harmless, but a careful examination of the details reveals a potential roadblock to finding what you are looking for. This seemingly simple form is designed to help a job seeker navigate through a complex set of job categories (and hopefully apply!) by choosing a category, and then a sub-category, and so-on.</p>
+
+<p><img src="http://travisisaacs.com/assets/img/posted/job_dropdown.jpg" alt="jobs selector" class="float_left"/></p>
+
+<h2>Language</h2> 
+
+<p>What does “Job Population” mean? It’s  jargon for job type, such as “IT”, “marketing,” or “legal.” Chances are the people using this form aren't going to be familiar with jargon, so it's best to avoid it. </p>
+
+<p>The label next to the go button uses the word “indicate” instead of “select” or “choose.” <em>Indicate</em> isn't a commonly used term by most people. </p>
+<div class="clearing"></div>
+<h2>Complex Filtering Process</h2> 
+
+<p>There are 4 conditions that need to be meet before that Go button can be used, yet to a user it looks like you can choose one and skip right to the end. “You  must indicate all 4 items!” doesn't actually fix the problem. It's well known in usability that people don't read instructional text, so relying on it is a mistake here. </p>
+
+
+
+<p>Since all four select boxes need to be selected, that means every single job must map up to 4 levels of hierarchy. Inevitably you’ll end up with a job that’s only 2 or 3 levels deep, so you have an artificial sub-category that is the same as it’s parent. </p>
+
+<p>Did you mean communications or <em>communications</em>?</p>
+
+<p>Want to browse all IT jobs? </p>
+
+<p><em>Nope</em>. </p>
+
+<p>This is a prime example of technology and schema peeking it’s ugly head into the interaction design (where actual people live). This form is forcing me to understand and traverse <em>your</em> database structure.   </p>
+
+<h2>Better:</h2>
+
+<p>At a minimum, the interaction of this form could be improved simply by only revealing each needed step in order, then showing the go button at the end:</p>
+
+<p><a href="http://travisisaacs.com/assets/img/posted/job_dropdown_better.jpg" target="_blank"><img src="http://travisisaacs.com/assets/img/posted/job_dropdown_better.jpg" alt="jobs better"/></a><a href="http://travisisaacs.com/assets/img/posted/job_dropdown_better.jpg" target="_blank"><small>View larger</small></a></p>
+
+This doesn’t fix any of the deeper language or structure problems, but it will give the user cues as to what hoops they need to jump through to get a result. </p>
+
+<h2>Fixing it</h2>
+
+<p>Dropdowns are dreadful here. Instead, offer up a really smart search box and let the users tell you what the want, instead of ordering from the menu:</p>
+
+<p><img src="http://travisisaacs.com/assets/img/posted/job_best.jpg" alt="job search using simple searching"/></p>
+
+<p>Offer type-ahead to reveal the internal structure as needed:</p>
+
+<p><img src="http://travisisaacs.com/assets/img/posted/job_best_category.jpg" alt="job search using category"/></p>
+
+<p>The search field can be flexible enough to accept categories or job titles:</p>
+
+<p><img src="http://travisisaacs.com/assets/img/posted/job_best_title.jpg" alt="job search using title"/></p>
+
+<p>This would facilitate casual browsing or targeted searching.</p>
+
+<p>Once a job title or category is narrowed, we can then ask the user which market they are in. A best-guess could easily pre-filled based on the user's IP. Extreme precision isn't needed here, a best guess at a country will go a long way. </p>
+
+<p><img src="http://travisisaacs.com/assets/img/posted/job_best_result.jpg" alt="job search getting a result"/></p>
+
+<p>Finally, once we have all the information we need, reveal the action to get results:</p>
+
+<p><img src="http://travisisaacs.com/assets/img/posted/job_best_submit.jpg" alt="job search submit"/></p>

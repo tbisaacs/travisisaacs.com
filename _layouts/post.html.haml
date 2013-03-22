@@ -1,0 +1,10 @@
+---
+layout: default
+---
+= link_to "{{ page.title }}", {{ page.url }}
+
+%h2
+	{{ page.date | date: "%d %B %Y" }}
+{% include tags.html %}
+{% include social.html %}
+{{ content }}

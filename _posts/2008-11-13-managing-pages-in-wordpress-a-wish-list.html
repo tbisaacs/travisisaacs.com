@@ -1,0 +1,54 @@
+---
+layout: post
+title: ! 'Managing Pages in WordPress: A Wish List'
+tags:
+- basic tools;
+- Better
+- cms
+- freelance site
+- recent site;
+- search functionality;
+- Web Design
+- wordpress
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+---
+I'm a big fan of WordPress. Sure it has it's quirks, and no doubt there are <a href="http://habariproject.org/en/">probably better platforms</a> out there, but overall it's really a fantastic a publishing platform. Lately I've used WordPress for nearly every freelance site I launch, no matter how small. Out of the box I get clean urls, search functionality, a fairly flexible templating system, and an enormous community of developers behind it. 
+
+The biggest value however is giving my clients some control over the website after the project is done. I have little interest in maintaining someone else's website on an ongoing basis, so putting some basic tools in their hands is a win for both of us. 
+
+None of this would be possible if it weren't for the ability to create <strong>pages</strong> in WordPress. Pages are just like a blog post except for two key differences: 
+
+<ul>
+<li>Pages can exist outside of the normal post chronology</li>
+<li>Pages can be mapped to their own page template</li>
+</ul>
+
+That means that WordPress can be used as light CMS with very little work. Here is an example of the page structure for a recent site I built:
+
+<a href="http://travisisaacs.com/wp-content/uploads/2008/11/pages-overview.jpg"><img src="http://travisisaacs.com/wp-content/uploads/2008/11/pages-overview-300x213.jpg" alt="" title="pages-overview" width="300" height="213" class="alignnone size-medium wp-image-106" /></a>
+<small>Click to enlarge</small>
+
+Every page in the site is represented here, even if I don't actually use WordPress to manage the content. I do this because I can easily use WordPress's <code>wp_list_pages</code> to dynamically generate navigation and menus. 
+
+Because I'm managing nearly all of the website content inside pages, and relying on their structure to dynamically generate my navigation, there are three things that I need to do for nearly every page: map the page to a template, define the page parent, and set the page sort-order. Unfortunately, these are all really clunky to do.
+
+Why so clunky? You have to actually be inside the page do set all of these options. Even with a small site of just about 15 pages - you can quickly find yourself frustrated. Second, the page parent and page sort-order are really out of context here. Both of these options are about the page in the context of all of the other pages.
+
+<a href="http://travisisaacs.com/wp-content/uploads/2008/11/page-options.jpg"><img src="http://travisisaacs.com/wp-content/uploads/2008/11/page-options.jpg" alt="" title="page-options" width="450" height="262" class="alignnone size-full wp-image-109" /></a>
+
+
+<h2>A Simple Idea</h2>
+
+A simple way to remedy this situation would be to surface these options at the page management level.
+ 
+<a href="http://travisisaacs.com/wp-content/uploads/2008/11/page-options-after.jpg"><img src="http://travisisaacs.com/wp-content/uploads/2008/11/page-options-after-300x142.jpg" alt="" title="page-options-after" width="300" height="142" class="alignnone size-medium wp-image-112" /></a>
+<small>Click to enlarge</small>
+
+All I did was move the template select menu, and the sort field to the page overview. To change the page order you simply click and change it in the text field (or bonus: drag and drop to re-order). 
+
+By surfacing these options at the top, you save a click and a long scroll to manage these common options (that in many cases, you need to modify for every page). 
+

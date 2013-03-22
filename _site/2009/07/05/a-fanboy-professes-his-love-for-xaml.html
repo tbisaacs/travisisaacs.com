@@ -1,0 +1,65 @@
+I'm working on a Windows Presentation Foundation (WPF) application at <a href="http://improvingenterprises.com>Improving</a> that has truly changed my perspective on front-end development for the web, especially about CSS.
+
+WPF is the latest .NET technology that can be used to write desktop applications for Windows. In the old days, writing software for Windows meant C# , <a href="http://en.wikipedia.org/wiki/Windows_Forms">WinForms</a>, and mastering the <a href="http://en.wikipedia.org/wiki/Graphics_Device_Interface">GDI</a>. Scary, right? WPF uses an XML-like presentation language called XAML to describe the UI. WPF can do some really neat things, like shader effects, hardware accelerated 3D, and much more (stuff that a real developer could explain).
+
+I started the project kicking and screaming. I just couldn't shake my HTML/CSS muscle memory, making translating my interface ideas into reality was truly an exercise in frustration. I need an HTML-to-XAML translator for my brain, and there just isn't one. 
+
+After a few months of trial and error, I'm finally comfortable with XAML, and I have to say, <strong>I freaking love it</strong>. Ok, maybe love is a strong word, but I am definitely in like with it. I like it so much so that idea of building an interface with tools like HTML and CSS seems just plain silly when you think about. 
+
+
+<h3>Style Resources</h3>
+
+There has been <a href="http://lesscss.org/">a lot of cool work</a> to allow front-end developers to use a more object-oriented approach to their CSS. One example would be to create variables for things like colors, and refer to them later. Because your colors are abstracted into variables, you only need to change them in one place. One example (in pseudo-code) might be:
+
+<pre>$microsoft_blue: #5ea3d6;
+
+#header{
+	background:$microsoft_blue;
+}</pre>
+
+I XAML, you can abstract things like colors, gradients (booyah!), and even background images as "resources" that can be consumed by other styles:
+
+<pre>&lt;LinearGradientBrush x:Key="ButtonBackground" StartPoint="0,0" EndPoint="0,1"&gt;
+    &lt;GradientBrush.GradientStops&gt;
+        &lt;GradientStopCollection&gt;
+            &lt;GradientStop Color="#3FFFFFFF" Offset="0" /&gt;
+            &lt;GradientStop Color="#00000000" Offset=".5"/&gt;
+        &lt;/GradientStopCollection&gt;
+    &lt;/GradientBrush.GradientStops&gt;
+&lt;/LinearGradientBrush&gt;
+
+<Style TargetType="Button">
+	<Setter Property="Background" Value="{StaticResource ButtonBackground}" />
+</Style></pre>
+
+In the above example, we created a linear gradient background, gave it a key, and created a style that consumes that resources. Freaking. Awesome.
+
+
+<h3>Styles <span class="amp">&amp;</span> Triggers</h3>
+
+In XAML, interactive behaviors (like clicks, mouse overs, toggled, etc) are a part of an element's styles. Here is a really rudimentary style for a button:
+
+<pre>&lt;Style TargetType="Button"&gt;
+	&lt;Setter Property="Background" Value="Red" /&gt;
+	&lt;Style.Triggers&gt;
+		&lt;Trigger Property="IsMouseOver" Value="True"&gt;
+			&lt;Setter Property="Background" Value="Maroon" /&gt;
+		&lt;/Trigger&gt;
+	&lt;/Style.Triggers&gt;
+&lt;/Style&gt;</pre>
+
+In the simple example above, I want all my buttons to have a red background and turn maroon when they are moused over. Now all my buttons will have this style and behavior. 
+
+<h3>Control Templates</h3>
+
+The "lookless" control in WPF is an extremely powerful, brain-melting concept. The idea is that an interface control's look can be modified in anyway, but the control will <strong>retain it's inherent properties</strong>. 
+
+This is was makes WPF superior to other UI toolkits like Java's Swing and SWT which are extremely limited in their customization. In HTML, common form elements cannot be styled or modified. 
+
+Ever want to change the look of a <code>&lt;select&gt;</code> box? Good luck. With WPF, your <code>&lt;select&gt;</code> box (which is a <code>&lt;ComboBox&gt;</code> in XAML) can either look like the Windows default theme, or completely changed, everything from the color to how long the drop-down takes to open. Best of all, making these customizations is really straight forward and doesn't require you to write a single line of C# code.
+
+<h3>XAML and HTML/CSS aren't even in the same galaxy</h3>
+
+XAML was solely written to build interfaces, which is in stark contrast from HTML's roots as a document formatting language thats been hacked up and layer upon. A traditional rich web application uses HTML (and probably some server-side language) to deliver the basic structure, CSS for layout, presentation, and text formatting, and then a layer of Javascript on top to handle the interactivity that HTML can't do, and probably some data exchange. 
+
+Because XAML was purpose built for UI all of the layout, styling, and interactivity are baked-in without a need for the complex UI "stack" of a traditional HTML web app. HTML and CSS3 show some promise of bringing a real UI toolkit to the web, but are still a far cry from what we need.
